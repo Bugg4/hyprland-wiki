@@ -56,7 +56,7 @@ For more info, read the [option](https://search.nixos.org/options?channel=unstab
 
 To launch Hyprland with uwsm, add this code in your shell profile.
 
-```
+```bash
 if uwsm check may-start && uwsm select; then
 	exec uwsm start default
 fi
@@ -66,7 +66,7 @@ This will bring uwsm compositor selection menu after you log in tty1. Choose `Hy
 
 If you want to bypass compositor selection menu and launch Hyprland directly, use this code in your shell profile, instead.
 
-```
+```bash
 if uwsm check may-start; then
     exec uwsm start hyprland-uwsm.desktop
 fi
@@ -84,7 +84,7 @@ Prefix application startup commands with `uwsm app --`. It also supports launchi
 
 Examples for autostart and bind entries:
 
-```
+```ini
 exec-once = uwsm app -- mycommand --arg1 --arg2
 bind = SUPER, E, exec, uwsm app -- pcmanfm-qt.desktop
 ```
